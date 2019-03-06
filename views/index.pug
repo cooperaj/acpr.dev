@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+
+    title acpr.dev
+    
+    include partials/_favicon.pug
+
+    link(rel="stylesheet" href="main.min.css")
+
+  body 
+    .vertical-center
+      .container.grid-lg
+        .columns.col-gapless
+          .column.col-sm-12.col-md-8.col-6.col-mx-auto
+            .card.vcard
+              .card-header
+                .card-title.h4.fn.n
+                  span.given-name Adam
+                  span.family-name Cooper
+                .card-subtitle.text-gray.title Senior PHP DevOps Developer
+              .card-body
+                .tile.tile-centered
+                  .tile-icon
+                    i.far.fa-lg.fa-envelope-square
+                  .tile-content
+                    .tile-title 
+                      a(href="mailto:adam@acpr.dev").email adam@acpr.dev
+                .tile.tile-centered
+                  .tile-icon
+                    i.fab.fa-lg.fa-github-square
+                  .tile-content
+                    .tile-title 
+                      a(href="https://github.com/cooperaj") github.com/cooperaj
+                .tile.tile-centered
+                  .tile-icon
+                    i.fab.fa-lg.fa-linkedin
+                  .tile-content
+                    .tile-title 
+                      a(href="https://linkedin.com/in/adamjohncooper") linkedin.com/in/adamjohncooper
+                div(data-content="Skills in").divider.text-center
+                .columns
+                  .column.col-2
+                    figure.figure
+                      img(src="images/php.svg").img-responsive
+                  .column.col-2
+                    figure.figure
+                      img(src="images/symfony.svg").img-responsive
+                  .column.col-2
+                    figure.figure
+                      img(src="images/laravel.svg").img-responsive
+                  .column.col-2
+                    figure.figure
+                      img(src="images/ansible.svg").img-responsive
+                  .column.col-2
+                    figure.figure
+                      img(src="images/docker.svg").img-responsive
+                  .column.col-2
+                    figure.figure
+                      img(src="images/rancher.svg").img-responsive
