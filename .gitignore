@@ -1,0 +1,9 @@
+.DS_Store
+
+.npmrc
+node_modules/
+faviconData.json
+
+public/*
+
+!.gitkeep
