@@ -1,0 +1,31 @@
+@import "variables";
+@import "spectre.css/src/spectre";
+
+$fa-font-path: 'webfonts';
+@import "@fortawesome/fontawesome-pro/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-pro/scss/regular";
+@import "@fortawesome/fontawesome-pro/scss/brands";
+
+.card {
+    border: 0;
+    box-shadow: 0 .25rem 1rem rgba(48,55,66,.15);
+    height: 100%;
+}
+
+.divider[data-content] {
+    margin: 1.2rem 0;
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+  
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: $size-sm) {
+    .vertical-center {
+        align-items: flex-start;
+    }
+}
