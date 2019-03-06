@@ -1,9 +1,9 @@
 {
-  "name": "networkpie.co.uk",
+  "name": "acpr.dev",
   "version": "1.0.0",
-  "description": "networkPie website",
+  "description": "acpr.dev website",
   "main": "index.js",
-  "author": "Adam Cooper <adam@networkpie.co.uk>",
+  "author": "Adam Cooper <adam@acpr.dev>",
   "license": "MIT",
   "engines": {
     "node": "8.x"
@@ -13,12 +13,12 @@
     "develop": "PORT=5000 node_modules/.bin/nodemon index.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.7.2",
     "express": "^4.16.4",
     "express-naked-redirect": "^0.1.3",
     "pug": "^2.0.3"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-pro": "^5.7.2",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
