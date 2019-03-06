@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 128 128">
+    <defs>
+        <radialGradient id="grad"
+            cx="50%" cy="70%" r="65%"
+            spreadMethod="pad">
+            <stop offset="0%"   stop-color="#70A0B7" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+        </radialGradient>
+    </defs>
+    <path id="logo"
+          d="M126,64
+             A62,62 0 1,0 2,64
+             A62,62 0 0,0 64,126
+             L64,64
+             L126,64
+             Z"
+          style="fill: url(#grad);
+                 stroke-width: 4;
+                 stroke-linecap: square;
+                 stroke: #70A0B7;"/>
+</svg>
