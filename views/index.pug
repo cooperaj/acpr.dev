@@ -1,61 +1,71 @@
 doctype html
 html(lang="en")
-  head
+  head(itemscope, itemtype="https://schema.org/Person")
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
 
-    title acpr.dev
+    meta(name="description", content="A senior PHP DevOps developer with a focus on OSS.")
+
+    title Adam Cooper - acpr.dev
     
     include partials/_favicon.pug
 
     link(rel="stylesheet" href="main.min.css")
 
-  body 
+  body(itemscope, itemtype="https://schema.org/Person") 
     .vertical-center
       .container.grid-lg
         .columns.col-gapless
           .column.col-sm-12.col-md-8.col-6.col-mx-auto
-            .card.vcard
+            div.card.vcard
+              .card-image
+                img(src="images/cover.jpg").img-responsive
               .card-header
                 .card-title.h4.fn.n
-                  span.given-name Adam
-                  span.family-name Cooper
-                .card-subtitle.text-gray.title Senior PHP DevOps Developer
+                  span(itemprop="givenName").given-name Adam
+                  span(itemprop="familyName").family-name Cooper
+                div(itemprop="jobTitle").card-subtitle.text-gray.title Senior PHP DevOps Developer
               .card-body
                 .tile.tile-centered
                   .tile-icon
                     i.far.fa-lg.fa-envelope-square
                   .tile-content
                     .tile-title 
-                      a(href="mailto:adam@acpr.dev").email adam@acpr.dev
+                      a(href="mailto:adam@acpr.dev", itemprop="email").email adam@acpr.dev
                 .tile.tile-centered
                   .tile-icon
                     i.fab.fa-lg.fa-github-square
                   .tile-content
                     .tile-title 
-                      a(href="https://github.com/cooperaj") github.com/cooperaj
+                      a(href="https://github.com/cooperaj", itemprop="mainEntityOfPage") github.com/cooperaj
                 .tile.tile-centered
                   .tile-icon
                     i.fab.fa-lg.fa-linkedin
                   .tile-content
                     .tile-title 
-                      a(href="https://linkedin.com/in/adamjohncooper") linkedin.com/in/adamjohncooper
+                      a(href="https://linkedin.com/in/adamjohncooper", itemprop="mainEntityOfPage") linkedin.com/in/adamjohncooper
                 div(data-content="I do").divider.text-center
                 .columns.tech
                   .column.col-2
-                    figure
-                      img(src="images/php.svg").img-responsive
+                    figure(itemprop="knowsAbout", itemscope, itemtype="https://schema.org/Thing")
+                      img(itemprop="image", src="images/php.svg", title="PHP programming language", alt="PHP logo").img-responsive
+                      fig-caption(itemprop="name").text-assistive PHP programming language
                   .column.col-2
-                    figure
-                      img(src="images/symfony.svg").img-responsive
+                    figure(itemprop="knowsAbout", itemscope, itemtype="https://schema.org/Thing")
+                      img(itemprop="image", src="images/symfony.svg", title="Symfony PHP framework", alt="Symfony logo").img-responsive
+                      fig-caption(itemprop="name").text-assistive Symfony PHP framework
                   .column.col-2
-                    figure
-                      img(src="images/ansible.svg").img-responsive
+                    figure(itemprop="knowsAbout", itemscope, itemtype="https://schema.org/Thing")
+                      img(itemprop="image", src="images/ansible.svg", title="Ansible configuration management", alt="Ansible logo").img-responsive
+                      fig-caption(itemprop="name").text-assistive Ansible configuration management
                   .column.col-2
-                    figure
-                      img(src="images/laravel.svg").img-responsive
+                    figure(itemprop="knowsAbout", itemscope, itemtype="https://schema.org/Thing")
+                      img(itemprop="image", src="images/laravel.svg", title="Laravel PHP framework", alt="Laravel logo").img-responsive
+                      fig-caption(itemprop="name").text-assistive Laravel PHP framework
                   .column.col-2
-                    figure
-                      img(src="images/docker.svg").img-responsive
+                    figure(itemprop="knowsAbout", itemscope, itemtype="https://schema.org/Thing")
+                      img(itemprop="image", src="images/docker.svg", title="Docker containerisation", alt="Docker logo").img-responsive
+                      fig-caption(itemprop="name").text-assistive Docker containerisation
                   .column.col-2
-                    figure
-                      img(src="images/rancher.svg").img-responsive
+                    figure(itemprop="knowsAbout", itemscope, itemtype="https://schema.org/Thing")
+                      img(itemprop="image", src="images/rancher.svg", title="Rancher container orchestration", alt="Rancher logo").img-responsive
+                      fig-caption(itemprop="name").text-assistive Rancher container orchestration
