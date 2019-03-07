@@ -5,9 +5,9 @@ WORKDIR /usr/src/app
 
 # Create .npmrc config file
 ARG FONT_AWESOME_KEY=none
-RUN echo "@fortawesome:registry=https://npm.fontawesome.com/\n\
-//npm.fontawesome.com/:_authToken=${FONT_AWESOME_KEY}" \
->> .npmrc && cat .npmrc
+RUN echo -e '@fortawesome:registry=https://npm.fontawesome.com/\n\
+//npm.fontawesome.com/:_authToken=${FONT_AWESOME_KEY}' \
+>> .npmrc
 
 COPY package*.json ./
 RUN npm set progress=false && \
