@@ -10,7 +10,10 @@ const sourcemaps = require('gulp-sourcemaps')
 const { generateFavicon, injectFaviconMarkups } = require('./favicon')
 
 function processAssets(cb) {
-    return src([ 'assets/images/*.svg' ])
+    return src([ 
+        'assets/images/*.svg',
+        'assets/images/*.jpg', 
+        ])
         .pipe(dest('public/images/'))
 }
 
