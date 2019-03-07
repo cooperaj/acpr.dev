@@ -16,67 +16,67 @@ function generateFavicon(cb) {
         masterPicture: 'assets/images/logo.svg',
         dest: 'public/',
         iconsPath: '/',
-            design: {
-                ios: {
-                    pictureAspect: 'backgroundAndMargin',
-                    backgroundColor: '#ffffff',
-                    margin: '14%',
-                    assets: {
-                        ios6AndPriorIcons: false,
-                        ios7AndLaterIcons: false,
-                        precomposedIcons: false,
-                        declareOnlyDefaultIcon: true
-                    },
-                    appName: 'acpr.dev'
-                },
-                desktopBrowser: {},
-                windows: {
-                    pictureAspect: 'whiteSilhouette',
-                    backgroundColor: '#00aba9',
-                    onConflict: 'override',
-                    assets: {
-                        windows80Ie10Tile: false,
-                        windows10Ie11EdgeTiles: {
-                            small: false,
-                            medium: true,
-                            big: false,
-                            rectangle: false
-                        }
-                    },
-                    appName: 'acpr.dev'
-                },
-                androidChrome: {
-                    pictureAspect: 'noChange',
-                    themeColor: '#ffffff',
-                    manifest: {
-                        name: 'acpr.dev',
-                        display: 'standalone',
-                        orientation: 'notSet',
-                        onConflict: 'override',
-                        declared: true
-                    },
-                    assets: {
-                        legacyIcon: false,
-                        lowResolutionIcons: false
-                    }
-                },
-                safariPinnedTab: {
-                    pictureAspect: 'silhouette',
-                    themeColor: '#00aba9'
-                }
-            },
-            settings: {
-                compression: 2,
-                scalingAlgorithm: 'Mitchell',
-                errorOnImageTooSmall: false,
-                readmeFile: false,
-                htmlCodeFile: false,
-                usePathAsIs: false
-            },
-            markupFile: FAVICON_DATA_FILE
-        }, function() {
-            cb()
-        })
+        design: {
+			ios: {
+				pictureAspect: 'backgroundAndMargin',
+				backgroundColor: '#ffffff',
+				margin: '21%',
+				assets: {
+					ios6AndPriorIcons: false,
+					ios7AndLaterIcons: false,
+					precomposedIcons: false,
+					declareOnlyDefaultIcon: true
+				},
+				appName: 'acpr.dev'
+			},
+			desktopBrowser: {},
+			windows: {
+				pictureAspect: 'noChange',
+				backgroundColor: '#da532c',
+				onConflict: 'override',
+				assets: {
+					windows80Ie10Tile: false,
+					windows10Ie11EdgeTiles: {
+						small: false,
+						medium: true,
+						big: false,
+						rectangle: false
+					}
+				},
+				appName: 'acpr.dev'
+			},
+			androidChrome: {
+				pictureAspect: 'shadow',
+				themeColor: '#ffffff',
+				manifest: {
+					name: 'acpr.dev',
+					display: 'standalone',
+					orientation: 'notSet',
+					onConflict: 'override',
+					declared: true
+				},
+				assets: {
+					legacyIcon: false,
+					lowResolutionIcons: false
+				}
+			},
+			safariPinnedTab: {
+				pictureAspect: 'silhouette',
+				themeColor: '#5bbad5'
+			}
+		},
+		settings: {
+			compression: 2,
+			scalingAlgorithm: 'Mitchell',
+			errorOnImageTooSmall: false,
+			readmeFile: false,
+			htmlCodeFile: false,
+			usePathAsIs: false
+		},
+		markupFile: FAVICON_DATA_FILE
+	}, function() {
+		cb();
+	});    
 }
 
 // Inject the favicon markups in your HTML pages. You should run
@@ -86,7 +86,23 @@ function injectFaviconMarkups(cb) {
     return gulp.src([ 'views/partials/_favicon.pug' ])
         .pipe(
             realFavicon.injectFaviconMarkups(
-                JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code
+                JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code,
+                {
+                    remove: [
+                        'link[rel="mask-icon"]',
+                        'link[rel="shortcut icon"]',
+                        'link[rel="icon"]',
+                        'link[rel^="apple-touch-icon"]',
+                        'link[rel="manifest"]',
+                        'link[rel="yandex-tableau-widget"]',
+                        'meta[name^="msapplication"]',
+                        'meta[name="mobile-web-app-capable"]',
+                        'meta[name="theme-color"]',
+                        'meta[property="og:image"]',
+                        'meta[name="apple-mobile-web-app-title"]',
+                        'meta[name="application-name"]',
+                    ]
+                }
             )
         )
         .pipe(gulp.dest('views/partials'))
