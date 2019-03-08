@@ -9,8 +9,13 @@ app.use(express.static('public'))
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
+  var protocol = req.protocol
+  if (req.headers['x-forwarded-proto']) {
+    protocol = req.headers['x-forwarded-proto'];
+  }
+
   res.status(200);
-  res.render('index', {absPath: req.protocol + '://' + req.hostname + '/'});
+  res.render('index', {absPath: protocol + '://' + req.hostname + '/'});
 })
 
 app.listen(process.env.PORT, function () {
