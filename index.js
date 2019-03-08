@@ -10,7 +10,7 @@ app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
   res.status(200);
-  res.render('index');
+  res.render('index', {absPath: req.protocol + '://' + req.hostname + '/'});
 })
 
 app.listen(process.env.PORT, function () {

@@ -1,17 +1,24 @@
 doctype html
-html(lang="en")
-  head(itemscope, itemtype="https://schema.org/Person")
+html(lang="en", prefix="og: http://ogp.me/ns#", itemscope, itemtype="https://schema.org/Person")
+  head
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
 
+    meta(name="og:type", content="profile")
+    meta(name="og:title", content="Adam Cooper - Senior PHP DevOps Developer")
+    meta(name="og:url", conten=absPath)
+    meta(name="og:person:first_name", content="Adam")
+    meta(name="og:person:last_name", content="Cooper")
+    meta(name="og:image", content=absPath + "images/cover.jpg")
+    meta(name="og:description", itemprop="description" content="A senior PHP DevOps developer with a focus on OSS.")
     meta(name="description", content="A senior PHP DevOps developer with a focus on OSS.")
 
-    title Adam Cooper - acpr.dev
+    title Adam Cooper - Senior PHP DevOps Developer
     
     include partials/_favicon.pug
 
     link(rel="stylesheet" href="main.min.css")
 
-  body(itemscope, itemtype="https://schema.org/Person") 
+  body
     .vertical-center
       .container.grid-lg
         .columns.col-gapless
