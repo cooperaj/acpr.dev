@@ -22,6 +22,7 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
+    "gulp-purgecss": "^1.1.1",
     "gulp-real-favicon": "^0.3.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",

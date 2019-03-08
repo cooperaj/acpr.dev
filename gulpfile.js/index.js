@@ -3,6 +3,7 @@
 const { src, dest, series, parallel } = require('gulp')
 const sass = require('gulp-sass')
 const cleancss = require('gulp-clean-css')
+const purgecss = require('gulp-purgecss')
 const rename = require('gulp-rename')
 const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
@@ -29,6 +30,9 @@ function createCSS(cb) {
     return src([ 'assets/stylesheets/main.scss' ])
         .pipe(sourcemaps.init())
         .pipe(sass({includePaths: ['./node_modules']}).on('error', sass.logError))
+        .pipe(purgecss({
+            content: ['views/**/*.pug']
+        }))
         .pipe(autoprefixer())
         .pipe(cleancss())
         .pipe(rename({
