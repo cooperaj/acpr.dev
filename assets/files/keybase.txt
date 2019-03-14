@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/cooperaj
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://acpr.dev
+  * I am cooperaj (https://keybase.io/cooperaj) on keybase.
+  * I have a public key ASAouvTmKbM5nrjGuuy1Hd_73dZrRXk0HYOGy7QHqh0Atgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101cd86c6656aa5c63c23d9b33093f9784dc76f58feb37fd88410b89ea9ff0741660a",
+      "host": "keybase.io",
+      "kid": "012028baf4e629b3399eb8c6baecb51ddffbddd66b4579341d8386cbb407aa1d00b60a",
+      "uid": "9f85d3802bde0d7024c7dae23cca7400",
+      "username": "cooperaj"
+    },
+    "merkle_root": {
+      "ctime": 1552575053,
+      "hash": "6e0951942c30dac4877a17f275b763b49d79ce642bb9339a9ae1d5a7dfe15d1ef50b10be903348dbb8a3f8a7b4c215961a7b303edaa6d83b050bb4dc094295f0",
+      "hash_meta": "79cbe3ca2f636ebfbcceb31f59cbac2282174aee21601a65a939a96c5c74a427",
+      "seqno": 4948248
+    },
+    "service": {
+      "entropy": "KcgucwCnkqECz5v7c26z2srR",
+      "hostname": "acpr.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.1.2"
+  },
+  "ctime": 1552575061,
+  "expire_in": 504576000,
+  "prev": "102f1f2fc1bb71bd6cd84eb4e4324e0c7ccf8e57d343f1d254d747142a86bb67",
+  "seqno": 34,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgKLr05imzOZ64xrrstR3f+93Wa0V5NB2Dhsu0B6odALYKp3BheWxvYWTESpcCIsQgEC8fL8G7cb1s2E605DJODHzPjlfTQ/HSVNdHFCqGu2fEIJGKtGd5Wabda5P5qzHuDZRMOJwGc5PQJg2H6EAiRE+BAgHCo3NpZ8RAAwPp+71cRnGVRgMyg/Rh9L4TvxglsLQvHS6ps2o6DizgBq367pOYanCj4BFG7qy17QNGs6pGNYYnN/02dC9RBqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIHlL95f1N9DNOx3GPt3Zu37yHDCCHgMnX9o42iK1hwiwo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/cooperaj
+
+==================================================================

@@ -18,6 +18,13 @@ function processAssets(cb) {
         .pipe(dest('public/images/'))
 }
 
+function processFiles(cb) {
+    return src([ 
+        'assets/files/*'
+        ])
+        .pipe(dest('public/'))
+}
+
 function processFonts(cb) {
     return src([ 
         'node_modules/@fortawesome/fontawesome-pro/webfonts/fa-brands*',
@@ -45,10 +52,11 @@ function createCSS(cb) {
 
 module.exports = {
     processAssets: processAssets,
+    processFiles: processFiles,
     createCSS: createCSS,
     generateFavicon: generateFavicon,
     injectFaviconMarkups: injectFaviconMarkups,
-    build: parallel(processAssets, processFonts, createCSS, series(generateFavicon, injectFaviconMarkups))
+    build: parallel(processAssets, processFiles, processFonts, createCSS, series(generateFavicon, injectFaviconMarkups))
 }
 
 module.exports.default = module.exports.build
