@@ -1,10 +1,12 @@
-var express = require('express')
-var app = express()
+var express = require('express'),
+    morgan = require('morgan'),
+    app = express()
 
 app.use(require('express-naked-redirect')({
   reverse: true,
   status: 301
 }))
+app.use(morgan('combined'))
 app.use(express.static('public'))
 app.set('view engine', 'pug')
 
