@@ -13,7 +13,14 @@ $fa-font-path: 'webfonts';
 }
 
 .divider[data-content] {
-    margin: 1.2rem 0;
+    margin: 1.2em 0;
+}
+
+.fa-stack {
+    font-size: 0.6777em;
+    width: 1.6777em;
+    height: 1.6777em;
+    vertical-align: -0.0677em;
 }
 
 .tech {
