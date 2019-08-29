@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag cooperaj/acpr:amd64-alpine-latest --build-arg FONT_AWESOME_KEY=${FONT_AWESOME_KEY}
-        env:
-          font_awesome_key: ${{ secrets.FONT_AWESOME_KEY }}
+      - name: Build the amd64 Docker image
+        uses: actions/docker/cli@master
+        with:
+          args: build . --file Dockerfile --tag cooperaj/acpr:amd64-alpine-latest --build-arg FONT_AWESOME_KEY=${{ secrets.FONT_AWESOME_KEY }}
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile.arm64v8 --tag cooperaj/acpr:arm64v8-alpine-latest --build-arg FONT_AWESOME_KEY=${FONT_AWESOME_KEY}
