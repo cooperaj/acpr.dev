@@ -6,18 +6,34 @@ on:
       - master
 
 jobs:
-  build:
+  build-amd64:
     runs-on: ubuntu-latest
  
     steps:
       - uses: actions/checkout@v1
       
-      - name: Build the amd64 Docker image
+      - name: Build the Docker image
         uses: actions/docker/cli@master
         with:
-          args: build . --file Dockerfile --tag cooperaj/acpr:amd64-alpine-latest --build-arg FONT_AWESOME_KEY=${{ secrets.FONT_AWESOME_KEY }}
+          args: build . --file Dockerfile --tag cooperaj/acpr --build-arg FONT_AWESOME_KEY=${{ secrets.FONT_AWESOME_KEY }}
 
-      - name: Build the arm64v8 Docker image
+      - name: Tag Docker image
+        uses:  actions/docker/tag@master
+        with:
+          args: acpr cooperaj/acpr
+
+  build-arm64v8:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build the Docker image
         uses: actions/docker/cli@master
         with:
-          args: build . --file Dockerfile.arm64v8 --tag cooperaj/acpr:arm64v8-alpine-latest --build-arg FONT_AWESOME_KEY=${{ secrets.FONT_AWESOME_KEY }}
+          args: build . --file Dockerfile.arm64v8 --tag cooperaj/acpr --build-arg FONT_AWESOME_KEY=${{ secrets.FONT_AWESOME_KEY }}
+
+      - name: Tag Docker image
+        uses:  actions/docker/tag@master
+        with:
+          args: acpr cooperaj/acpr
