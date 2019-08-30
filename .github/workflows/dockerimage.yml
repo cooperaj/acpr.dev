@@ -22,6 +22,16 @@ jobs:
         with:
           args: acpr cooperaj/acpr
 
+      - name: Architecture Tag (Latest)
+        uses: actions/docker/cli@master
+        with:
+          args: tag cooperaj/acpr:latest cooperaj/acpr:amd64-alpine-latest
+
+      - name: Architecture Tag (Git)
+        uses: actions/docker/cli@master
+        with:
+          args: tag cooperaj/acpr:${IMAGE_REF} cooperaj/acpr:amd64-alpine-${IMAGE_REF}
+
   build-arm64v8:
     runs-on: ubuntu-latest
  
@@ -42,3 +52,13 @@ jobs:
         uses:  actions/docker/tag@master
         with:
           args: acpr cooperaj/acpr
+
+      - name: Architecture Tag (Latest)
+        uses: actions/docker/cli@master
+        with:
+          args: tag cooperaj/acpr:latest cooperaj/acpr:arm64v8-alpine-latest
+
+      - name: Architecture Tag (Git)
+        uses: actions/docker/cli@master
+        with:
+          args: tag cooperaj/acpr:${IMAGE_REF} cooperaj/acpr:arm64v8-alpine-${IMAGE_REF}
