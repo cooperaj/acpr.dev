@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<!--
+Font Awesome Pro 5.13.0 by @fontawesome - https://fontawesome.com
+License - https://fontawesome.com/license (Commercial License)
+-->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20190801 at Sun May  3 15:46:37 2020
+ By root
+Copyright (c) Font Awesome
+</metadata>
+<defs>
+<font id="FontAwesome5Pro-Regular" horiz-adv-x="448" >
+  <font-face 
+    font-family="Font Awesome 5 Pro Regular"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 -32 448 416"
+    underline-thickness="25"
+    underline-position="-50"
+    unicode-range="U+0020-F199"
+  />
+    <missing-glyph />
+    <glyph glyph-name="square" unicode="&#xf0c8;" 
+d="M400 416c26.5 0 48 -21.5 48 -48v-352c0 -26.5 -21.5 -48 -48 -48h-352c-26.5 0 -48 21.5 -48 48v352c0 26.5 21.5 48 48 48h352zM394 16c3.2998 0 6 2.7002 6 6v340c0 3.2998 -2.7002 6 -6 6h-340c-3.2998 0 -6 -2.7002 -6 -6v-340c0 -3.2998 2.7002 -6 6 -6h340z" />
+    <glyph glyph-name="envelope-square" unicode="&#xf199;" 
+d="M187.293 187.626c-72.5498 49.8828 -71.8105 50.0078 -91.293 64.374v12c0 13.2549 10.7451 24 24 24h208c13.2549 0 24 -10.7451 24 -24v-12c-19.4971 -14.376 -18.7471 -14.4941 -91.293 -64.374c-8.41406 -5.81152 -25.1045 -19.79 -36.707 -19.625
+c-11.5996 -0.166016 -28.2959 13.8164 -36.707 19.625zM278.856 161.271c45.0498 30.9746 62.0137 42.8789 73.1436 50.9521v-92.2236c0 -13.2549 -10.7451 -24 -24 -24h-208c-13.2549 0 -24 10.7451 -24 24v92.2236c11.1309 -8.07422 28.0967 -19.9805 73.1514 -50.958
+c11.7666 -8.14746 31.6074 -25.3691 54.8486 -25.2656c23.377 -0.105469 43.5186 17.4248 54.8564 25.2715zM448 368v-352c0 -26.5098 -21.4902 -48 -48 -48h-352c-26.5098 0 -48 21.4902 -48 48v352c0 26.5098 21.4902 48 48 48h352c26.5098 0 48 -21.4902 48 -48zM400 22
+v340c0 3.31152 -2.68848 6 -6 6h-340c-3.31152 0 -6 -2.68848 -6 -6v-340c0 -3.31152 2.68848 -6 6 -6h340c3.31152 0 6 2.68848 6 6z" />
+  </font>
+</defs></svg>

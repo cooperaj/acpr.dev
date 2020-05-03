@@ -1,0 +1,71 @@
+envelope-square:
+  changes:
+    - '4.1'
+    - 5.0.0
+  label: Envelope Square
+  search:
+    terms:
+      - e-mail
+      - email
+      - letter
+      - mail
+      - message
+      - notification
+      - support
+  styles:
+    - regular
+  unicode: f199
+  voted: false
+github-square:
+  changes:
+    - '1'
+    - 5.0.0
+  label: GitHub Square
+  search:
+    terms:
+      - octocat
+  styles:
+    - brands
+  unicode: f092
+  voted: false
+keybase:
+  changes:
+    - 5.0.11
+    - 5.8.0
+    - 5.10.2
+    - 5.11.0
+  label: Keybase
+  search:
+    terms: []
+  styles:
+    - brands
+  unicode: f4f5
+  voted: true
+linkedin:
+  changes:
+    - '1'
+    - 5.0.0
+  label: LinkedIn
+  search:
+    terms:
+      - linkedin-square
+  styles:
+    - brands
+  unicode: f08c
+  voted: false
+square:
+  changes:
+    - '2'
+    - 5.0.0
+    - 5.10.1
+    - 5.10.2
+  label: Square
+  search:
+    terms:
+      - block
+      - box
+      - shape
+  styles:
+    - regular
+  unicode: f0c8
+  voted: false

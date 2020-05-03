@@ -27,8 +27,8 @@ function processFiles(cb) {
 
 function processFonts(cb) {
     return src([ 
-        'node_modules/@fortawesome/fontawesome-pro/webfonts/fa-brands*',
-        'node_modules/@fortawesome/fontawesome-pro/webfonts/fa-regular*' 
+        'assets/fontawesome-subset/webfonts/fa-brands*',
+        'assets/fontawesome-subset/webfonts/fa-regular*' 
         ])
         .pipe(dest('public/webfonts/'))
 }

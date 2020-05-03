@@ -2,9 +2,9 @@
 @import "spectre.css/src/spectre";
 
 $fa-font-path: 'webfonts';
-@import "@fortawesome/fontawesome-pro/scss/fontawesome.scss";
-@import "@fortawesome/fontawesome-pro/scss/regular";
-@import "@fortawesome/fontawesome-pro/scss/brands";
+@import "../fontawesome-subset/scss/fontawesome.scss";
+@import "../fontawesome-subset/scss/regular";
+@import "../fontawesome-subset/scss/brands";
 
 .card {
     border: 0;
