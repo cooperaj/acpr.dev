@@ -1,5 +1,5 @@
 # Stage 1. Build the application assets
-FROM node:alpine as builder
+FROM node:12-alpine as builder
 
 WORKDIR /usr/src/app
 
@@ -18,7 +18,7 @@ COPY . .
 RUN node_modules/.bin/gulp
 
 # Stage 2. Define the runtime 
-FROM node:alpine
+FROM node:12-alpine
 
 RUN apk add --no-cache tini
 ENTRYPOINT ["/sbin/tini", "--"]
