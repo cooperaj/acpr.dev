@@ -1,7 +1,7 @@
 'use strict'
 
 const { src, dest, series, parallel } = require('gulp')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const cleancss = require('gulp-clean-css')
 const purgecss = require('gulp-purgecss')
 const rename = require('gulp-rename')

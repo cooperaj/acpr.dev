@@ -15,7 +15,7 @@ jobs:
       - name: Build the Docker image
         uses: actions/docker/cli@master
         with:
-          args: build . --file Dockerfile --tag acpr --build-arg FONT_AWESOME_KEY=${{ secrets.FONT_AWESOME_KEY }}
+          args: build . --file Dockerfile --tag acpr
 
       - name: Tag Docker image
         uses:  actions/docker/tag@master
@@ -46,7 +46,7 @@ jobs:
       - name: Build the Docker image
         uses: actions/docker/cli@master
         with:
-          args: build . --file Dockerfile.arm64v8 --tag acpr --build-arg FONT_AWESOME_KEY=${{ secrets.FONT_AWESOME_KEY }}
+          args: build . --file Dockerfile.arm64v8 --tag acpr
 
       - name: Tag Docker image
         uses:  actions/docker/tag@master

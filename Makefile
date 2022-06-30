@@ -1,11 +1,10 @@
-FONT_AWESOME_KEY ?= none
 REPO ?= cooperaj/acpr
 
 build-arm64v8:
-	docker build --build-arg 'FONT_AWESOME_KEY=$(FONT_AWESOME_KEY)' -f Dockerfile.arm64v8 -t ${REPO}:arm64v8-alpine-latest .
+	docker build -f Dockerfile.arm64v8 -t ${REPO}:arm64v8-alpine-latest .
 
 build-amd64:
-	docker build --build-arg 'FONT_AWESOME_KEY=$(FONT_AWESOME_KEY)' -t $(REPO):amd64-alpine-latest .
+	docker build -t $(REPO):amd64-alpine-latest .
 
 .PHONY: build-arm64v8 build-amd64 build
 build: build-arm64v8 build-amd64

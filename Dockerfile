@@ -1,15 +1,9 @@
 # Stage 1. Build the application assets
-FROM node:12-alpine as builder
+FROM node:16-alpine as builder
 
 WORKDIR /usr/src/app
 
-# Create .npmrc config file
-ARG FONT_AWESOME_KEY=none
-RUN echo -e '@fortawesome:registry=https://npm.fontawesome.com/\n\
-//npm.fontawesome.com/:_authToken=${FONT_AWESOME_KEY}' \
->> .npmrc
-
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 RUN npm set progress=false && \
     npm config set depth 0 && \
     npm install
@@ -18,7 +12,7 @@ COPY . .
 RUN node_modules/.bin/gulp
 
 # Stage 2. Define the runtime 
-FROM node:12-alpine
+FROM node:16-alpine
 
 RUN apk add --no-cache tini
 ENTRYPOINT ["/sbin/tini", "--"]
@@ -29,10 +23,10 @@ RUN chown node.node .
 USER node
 ENV NODE_ENV production
 
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 RUN npm set progress=false && \
     npm config set depth 0 && \
-    npm install --production
+    npm install --omit=dev
 
 COPY . .
 COPY --from=builder /usr/src/app/public public
