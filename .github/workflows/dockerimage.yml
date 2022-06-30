@@ -3,62 +3,47 @@ name: Build Docker images
 on: 
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  build-amd64:
+  build-image:
     runs-on: ubuntu-latest
  
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       
-      - name: Build the Docker image
-        uses: actions/docker/cli@master
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
         with:
-          args: build . --file Dockerfile --tag acpr
+          images: |
+            cooperaj/acpr
+          labels: |
+            org.opencontainers.image.title=acpr.dev website
+            org.opencontainers.image.description=Standalone image for the acpr.dev contact point website.
+            org.opencontainers.image.vendor=NetworkPie
+          tags: |
+            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=ref,event=branch
 
-      - name: Tag Docker image
-        uses:  actions/docker/tag@master
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
         with:
-          args: acpr cooperaj/acpr
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Architecture Tag (Latest)
-        uses: actions/docker/cli@master
+      - name: Build and push
+        uses: docker/build-push-action@v3
         with:
-          args: tag cooperaj/acpr:latest cooperaj/acpr:amd64-alpine-latest
-
-      - name: Architecture Tag (Git)
-        uses: actions/docker/cli@master
-        with:
-          args: tag cooperaj/acpr:${IMAGE_REF} cooperaj/acpr:amd64-alpine-${IMAGE_REF}
-
-  build-arm64v8:
-    runs-on: ubuntu-latest
- 
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Register multiarch build tooling
-        uses: actions/docker/cli@master
-        with:
-          args: run --rm --privileged multiarch/qemu-user-static --reset -p yes
-
-      - name: Build the Docker image
-        uses: actions/docker/cli@master
-        with:
-          args: build . --file Dockerfile.arm64v8 --tag acpr
-
-      - name: Tag Docker image
-        uses:  actions/docker/tag@master
-        with:
-          args: acpr cooperaj/acpr
-
-      - name: Architecture Tag (Latest)
-        uses: actions/docker/cli@master
-        with:
-          args: tag cooperaj/acpr:latest cooperaj/acpr:arm64v8-alpine-latest
-
-      - name: Architecture Tag (Git)
-        uses: actions/docker/cli@master
-        with:
-          args: tag cooperaj/acpr:${IMAGE_REF} cooperaj/acpr:arm64v8-alpine-${IMAGE_REF}
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
