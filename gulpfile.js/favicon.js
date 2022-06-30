@@ -83,29 +83,11 @@ function generateFavicon(cb) {
 // this task whenever you modify a page. You can keep this task
 // as is or refactor your existing HTML pipeline.
 function injectFaviconMarkups(cb) {
-    return gulp.src([ 'views/partials/_favicon.pug' ])
-        .pipe(
-            realFavicon.injectFaviconMarkups(
-                JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code,
-                {
-                    remove: [
-                        'link[rel="mask-icon"]',
-                        'link[rel="shortcut icon"]',
-                        'link[rel="icon"]',
-                        'link[rel^="apple-touch-icon"]',
-                        'link[rel="manifest"]',
-                        'link[rel="yandex-tableau-widget"]',
-                        'meta[name^="msapplication"]',
-                        'meta[name="mobile-web-app-capable"]',
-                        'meta[name="theme-color"]',
-                        'meta[property="og:image"]',
-                        'meta[name="apple-mobile-web-app-title"]',
-                        'meta[name="application-name"]',
-                    ]
-                }
-            )
-        )
-        .pipe(gulp.dest('views/partials'))
+	fs.writeFile(
+		'views/partials/_favicon.pug', 
+		JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code, 
+		cb
+	);
 }
   
 // Check for updates on RealFaviconGenerator (think: Apple has just
