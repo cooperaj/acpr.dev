@@ -20,7 +20,8 @@ function processAssets(cb) {
 
 function processFiles(cb) {
     return src([ 
-        'assets/files/*'
+        'assets/files/**/*',
+        'assets/files/.*/**/*'
         ])
         .pipe(dest('public/'))
 }
