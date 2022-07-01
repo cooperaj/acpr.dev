@@ -8,7 +8,7 @@ const rename = require('gulp-rename')
 const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
 
-const { generateFavicon, injectFaviconMarkups } = require('./favicon')
+const { generateFavicon, injectFaviconMarkups, checkForFaviconUpdates } = require('./favicon')
 
 function processAssets(cb) {
     return src([ 
@@ -57,6 +57,7 @@ module.exports = {
     createCSS: createCSS,
     generateFavicon: generateFavicon,
     injectFaviconMarkups: injectFaviconMarkups,
+    checkForFaviconUpdates: checkForFaviconUpdates,
     build: parallel(processAssets, processFiles, processFonts, createCSS, series(generateFavicon, injectFaviconMarkups))
 }
 
