@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-images:
+  build-push-images:
     runs-on: ubuntu-latest
  
     steps:
@@ -48,3 +48,19 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+  
+  deploy-to-dokku:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Deploy
+        uses: dokku/github-action@master
+        with:
+          branch: main
+          git_remote_url: 'ssh://dokku@n8e.dev/acpr.dev'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
