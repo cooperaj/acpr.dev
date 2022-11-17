@@ -27,29 +27,28 @@ app.get('/.well-known/webfinger', function (req, res) {
   }
 
   var me = {
-    "subject" : "acct:pieceofthepie@mastodon.social",
-    "aliases":
-      [
-        "https://mastodon.social/@pieceofthepie",
-        "https://mastodon.social/users/pieceofthepie"
-      ],
-    "links":
-      [
-        {
-          "rel" : "http://webfinger.net/rel/profile-page",
-          "type":"text/html",
-          "href":"https://mastodon.social/@pieceofthepie"
-        },
-        {
-          "rel":"self","type":"application/activity+json",
-          "href":"https://mastodon.social/users/pieceofthepie"
-        },
-        {
-          "rel":"http://ostatus.org/schema/1.0/subscribe",
-          "template":"https://mastodon.social/authorize_interaction?uri={uri}"
-        }
-      ]
-    }
+    "subject":"acct:pieceofthepie@n8e.dev",
+    "aliases":[
+      "https://social.n8e.dev/@pieceofthepie",
+      "https://social.n8e.dev/users/pieceofthepie"
+    ],
+    "links":[
+      {
+        "rel":"http://webfinger.net/rel/profile-page",
+        "type":"text/html",
+        "href":"https://social.n8e.dev/@pieceofthepie"
+      },
+      {
+        "rel":"self",
+        "type":"application/activity+json",
+        "href":"https://social.n8e.dev/users/pieceofthepie"
+      },
+      {
+        "rel":"http://ostatus.org/schema/1.0/subscribe",
+        "template":"https://social.n8e.dev/authorize_interaction?uri={uri}"
+      }
+    ]
+  }
 
   res.json(me)
 })
