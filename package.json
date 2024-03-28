@@ -13,7 +13,7 @@
     "develop": "PORT=5000 node_modules/.bin/nodemon index.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^4.19.2",
     "express-naked-redirect": "^0.1.9",
     "morgan": "^1.10.0",
     "pug": "^3.0.2"
