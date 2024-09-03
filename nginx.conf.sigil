@@ -210,5 +210,5 @@ upstream {{ $.APP }}-{{ $upstream_port }} {
 {{ end }}{{ end }}
 
 upstream bsky {
-  server pds:3000
+  server pds:3000;
 }
